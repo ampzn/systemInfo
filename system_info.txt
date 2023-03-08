@@ -1,11 +1,12 @@
-System Information - Wed Mar 08 16:46:01 EST 2023
+System Information - Wed Mar 08 17:15:34 EST 2023
 
 Computer Name: LAPTOP-PNGOQKFO
 IP Address: 192.168.56.1
 
 MAC Address: 0A-00-27-00-00-08
 
-CPU Usage: 50 %
+CPU Usage: 40 %
+
 Services Running: System Idle Process
 System
 Secure System
@@ -254,19 +255,11 @@ chrome.exe
 chrome.exe
 notepad.exe
 taskhostw.exe
-chrome.exe
 MpCopyAccelerator.exe
 GameBar.exe
 GameBarFTServer.exe
 RuntimeBroker.exe
-svchost.exe
 chrome.exe
-cmd.exe
-conhost.exe
-java.exe
-java.exe
-chrome.exe
-SearchProtocolHost.exe
 chrome.exe
 chrome.exe
 dllhost.exe
@@ -276,29 +269,28 @@ fsnotifier.exe
 conhost.exe
 java.exe
 conhost.exe
-chrome.exe
 SystemSettings.exe
 UserOOBEBroker.exe
 chrome.exe
-svchost.exe
-WmiPrvSE.exe
-WmiPrvSE.exe
+audiodg.exe
+conhost.exe
+powershell.exe
+cmd.exe
+conhost.exe
+java.exe
+java.exe
+SearchProtocolHost.exe
+chrome.exe
+chrome.exe
 chrome.exe
 SearchFilterHost.exe
 chrome.exe
-git.exe
-conhost.exe
-git.exe
-git.exe
-git-remote-https.exe
+svchost.exe
+WmiPrvSE.exe
 java.exe
 java.exe
 conhost.exe
 conhost.exe
-sh.exe
-git.exe
-git-credential-manager-core.exe
 tasklist.exe
 conhost.exe
-git.exe
 

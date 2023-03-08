@@ -8,25 +8,23 @@ import java.util.Date;
 public class SystemInfo {
     public static void main(String[] args) {
         try {
-            // Create a new File object for the system_info.txt file
+            // Creates a file to save data retrieved
             File file = new File("system_info.txt");
-
-            // Create a new FileWriter object to write to the file
             FileWriter writer = new FileWriter(file);
 
-            // Get the current date and time
+            // Gets current date and time
             Date date = new Date();
 
-            // Write the current date and time to the file
+            // Writes current date and time
             writer.write("System Information - " + date.toString() + "\n\n");
 
-            // Get the computer name and IP address
+            // Gets the computer name and IP address
             InetAddress ip = InetAddress.getLocalHost();
             String hostname = ip.getHostName();
             writer.write("Computer Name: " + hostname + "\n");
             writer.write("IP Address: " + ip.getHostAddress() + "\n\n");
 
-            // Get the MAC address of the first network interface
+            // Gets the MAC address of the first network interface
             NetworkInterface network = NetworkInterface.getByInetAddress(ip);
             byte[] mac = network.getHardwareAddress();
             StringBuilder sb = new StringBuilder();
@@ -35,11 +33,11 @@ public class SystemInfo {
             }
             writer.write("MAC Address: " + sb.toString() + "\n\n");
 
-            // Get the system's CPU usage
+            // Gets the system's CPU usage
             double cpuUsage = getCPUUsage();
             writer.write("CPU Usage: " + new DecimalFormat("#.##").format(cpuUsage) + " %\n\n");
 
-            // Get the list of running services
+            // Gets the list of running services
             String runningServices = runApplication();
             writer.write("Services Running: " + runningServices + "\n");
 
@@ -54,17 +52,17 @@ public class SystemInfo {
         }
     }
 
-    // Method to get the current CPU usage
+    // Gets the current CPU usage
     private static double getCPUUsage() {
         try {
-            // Execute the "wmic cpu get loadpercentage" command and parse the output
+            // Executes the "wmic cpu get loadpercentage" command
             Process process = Runtime.getRuntime().exec("wmic cpu get loadpercentage");
             process.getOutputStream().close();
 
             String output = new String(process.getInputStream().readAllBytes());
             String[] lines = output.split("\n");
 
-            // Extract the CPU usage value from the output
+            // Extracts the CPU usage
             String value = lines[1].trim();
             double cpuUsage = Double.parseDouble(value);
 
@@ -83,17 +81,17 @@ public class SystemInfo {
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
-            // Skip the first line (header)
+            // Skip header
             String line = bufferedReader.readLine();
 
-            // Read the rest of the lines and extract the service name
+            // Reads all the lines and extract the service name
             while ((line = bufferedReader.readLine()) != null) {
                 String[] parts = line.split(",");
                 String serviceName = parts[0].replaceAll("\"", "");
                 sb.append(serviceName).append("\n");
             }
 
-            // Close the streams
+            // Closes the streams
             bufferedReader.close();
             inputStreamReader.close();
             inputStream.close();
